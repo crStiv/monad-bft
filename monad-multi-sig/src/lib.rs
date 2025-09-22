@@ -116,6 +116,7 @@ impl<S: CertificateSignatureRecoverable> SignatureCollection for MultiSig<S> {
         })
     }
 
+    #[deprecated(since = "0.1.0", note = "This function is only used by tests and should not be used in production code")]
     fn num_signatures(&self) -> usize {
         self.sigs.len()
     }
