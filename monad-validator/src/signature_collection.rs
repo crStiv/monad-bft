@@ -94,7 +94,12 @@ pub trait SignatureCollection:
         SignatureCollectionError<Self::NodeIdPubKey, Self::SignatureType>,
     >;
 
-    // TODO-4: deprecate this function: only used by tests
+    /// Returns the number of signatures in the collection.
+    /// 
+    /// # Deprecated
+    /// This function is deprecated as it's only used by tests.
+    /// Consider using alternative approaches for production code.
+    #[deprecated(since = "0.1.0", note = "This function is only used by tests and should not be used in production code")]
     fn num_signatures(&self) -> usize;
 
     fn serialize(&self) -> Vec<u8>;
